@@ -7,7 +7,7 @@ function validaLogin() {
     let user = JSON.parse(userTxt);
     //document.getElementById("fotoUser").innerHTML = "<img src= \"" +user.linkFoto+"\">";
     document.getElementById("fotoUser").innerHTML = `<img src= "${user.linkFoto}">`
-    document.getElementById("dadosUser").innerHTML = `Usuário logado: ${user.nome} <b></b>`
+    document.getElementById("dadosUser").innerHTML = `Usuário: <b>${user.nome}</b><br>RACF: <b>${user.racf}</b> <br>`
 }
 function logout() {
     localStorage.removeItem("userLoged");

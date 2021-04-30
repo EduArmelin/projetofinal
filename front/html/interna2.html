@@ -15,6 +15,7 @@
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
 
+    <script src="/js/interna.js"></script>
     <script src="/js/interna2.js"></script>
     <link rel="stylesheet" href="/css/estilo.css">
 
@@ -22,45 +23,63 @@
 </head>
 
 <body onload="validaLogin()">
-    <h2 class="h2"> Relatório de Eventos </h2>
+    <h2> Relatório de Eventos </h2>
 
-    <table border="1" width="100%" class="menu"></table>
-    <tr>
-        <td class="col-lg-12" style="text-align: left;">
-            <a href="/html/interna.html" class="btn btn-info" role="button">Voltar</a>
-        </td>
-        <!-- Separar botões - deixar nas extremidades -->
-        <td class="col-lg-12" style="text-align: right;">
-            <button class="btn btn-info" onclick="logout()">Sair</button>
-        </td>
-    </tr>
+    <table border="0" width="100%" cellspacing="90">
+        <tr>
+            <td class="col-lg-12" style="text-align: left;">
+                <a href="/html/interna.html" class="btn btn-info" style="background-color: rgb(0, 0, 156);" role="button">Voltar</a>
+            </td>
+            <!-- Separar botões - deixar nas extremidades -->
+            <td class="col-lg-12" style="text-align: right;">
+                <button class="btn btn-info" style="background-color: rgb(0, 0, 156);" onclick="logout()">Sair</button>
+            </td>
+        </tr>
     </table>
+    <br><br>
+    <div class="container" >
+        <div class="row justify-content-center" >
+            <div id="fotoUser"></div>
+            <br>
+            <div style="margin-left: 5px;" id="dadosUser"></div>
+            <br><br>
+        </div>
+    </div>
     <br>
-    <h3 class="h3"> Selecione a Data</h3><br><br>
-
+    <h3> Selecione a Data</h3>
     <!-- Selecionar a data -->
 
-        <!-- Para centralizar na horizontal -->
-        <!--APAGAR -> class="col-6 mx-auto  class="col-lg-6 col-md-6 mx-auto"-->
-    <div class="col-lg-3 col-md-3 col-sd-3 row mx-auto" >
-        <div>
-            <input type="date" class="form-control" placeholder="Data inicio" id="txtDataI">
+    <!-- Para centralizar na horizontal -->
+    <!--APAGAR -> class="col-6 mx-auto  class="col-lg-6 col-md-6 mx-auto"-->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div>
+                <h4>Data inicio:</h4>
+                <input type="date" class="form-control" placeholder="Data inicio" id="txtDataI">
+            </div>
+            <br>
+            <div>
+                <h4>Data fim:</h4>
+                <input type="date" class="form-control" placeholder="Data fim" id="txtDataF">
+            </div>
+            <br><br>
         </div>
-        <div >
-            <input type="date" class="form-control" placeholder="Data fim" id="txtDataF">
+    
+        <div class="row justify-content-center">
+            <div class="col-lg-12" style="text-align: center" id="btRelatorios">
+                <button class="btn btn-info" style="background-color: rgb(0, 0, 156);" onclick="buscarRelatorios()">Gerar relatório</button><br>
+            </div>
+        </div>
+        <div class="row justify-content-center"><br></div>
+        <div class="row justify-content-center">
+            <div style="text-align:center" id="msgError"></div>
+            <div class="row w-100">
+                <div class="col-8 mx-auto">
+                    <div id="relatorios"></div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="col-lg-12" style="text-align: center" id="btRelatorios">
-        <button class="btn btn-info" onclick="buscarRelatorios()">Gerar relatório</button>
-    </div>
-    <h4>"Tratar valor nulo"</h4>
-    <div class="text-center" id="msgError"></div>
-    <div id="relatorios"></div>
-
-
-
-
 </body>
 
 </html>

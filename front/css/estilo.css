@@ -1,9 +1,14 @@
 body, html {
-    background-color: rgb(217, 219, 230);
+    /*background-color: rgb(217, 219, 230);*/
+    background-color:rgb(236, 118, 6) ;
     height: 100%;
     
   }
-
+button {
+    /*background-color: rgb(217, 219, 230);*/
+    background-color:rgba(4, 4, 134, 0.925) ;
+   
+}
   h1 {
     font-size: 26px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -11,37 +16,49 @@ body, html {
     color:rgb(3, 1, 1);
     text-align: center;
   }
-
   h2 {
-    font-size: 5px;
+    font-size: 22px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bolder;
     color:rgb(0, 0, 0);
     text-align: center;
   }
-
   h3 {
-    font-size: 5px;
+    font-size: 18px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bolder;
     color:rgb(0, 0, 0);
     text-align: center;
-
   }
-  .form-control{
+  h4 {
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    color:rgb(0, 0, 0);
+    text-align: center;
+}
+#tableevento > tr{
+  border:1px solid black;
+  
+}
+.form-control{
     margin-bottom: 15px;
-  }
-  
-  #msgError{
-    color: red;
-  }
-  
-  #fotoUser img {
+}
+#msgError{
+    color:darkred;
+    font-weight: bolder;
+}
+#fotoUser img {
     height: 80px;
     width: 80px;
     margin: auto;
-  }
-
-  #dadosUser text {
+}
+#dadosUser text {
     text-align: center;
-  }
+}
+
+
+#tableevento td, #tableevento th {
+    border-width: 1px; /* se quiser mudar a espessura da linha */
+    border-color:white ;
+}

@@ -15,43 +15,57 @@
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
 
+    <script src="/js/interna.js"></script>
     <script src="/js/interna3.js"></script>
     <link rel="stylesheet" href="/css/estilo.css">
 
     <title>Document</title>
 </head>
 
-<body onload="validaLogin()">
-    <h2 class="h2"> Relatório de Alarmes </h2>
+<body onload="validaLogin(); buscarAlertas()">
+    <h2> Relatório de Alarmes </h2>
 
-    <table border="1" width="100%" class="menu"></table>
+
+    <table border="0" width="100%" cellspacing="90">
     <tr>
         <td class="col-lg-12" style="text-align: left;">
-            <a href="/html/interna.html" class="btn btn-info" role="button">Voltar</a>
+            <a href="/html/interna.html" class="btn btn-info" style="background-color: rgb(0, 0, 156);" role="button">Voltar</a>
         </td>
         <!-- Separar botões - deixar nas extremidades -->
         <td class="col-lg-12" style="text-align: right;">
-            <button class="btn btn-info" onclick="logout()">Sair</button>
+            <button class="btn btn-info" style="background-color: rgb(0, 0, 156);" onclick="logout()">Sair</button>
         </td>
     </tr>
     </table>
-    <br>
-    <h3 class="h3"> Lista dos Alartas Monitorados</h3><br><br>
 
+
+    <br><br>
+    <div  class = "container">
+        <div class="row justify-content-center">
+            <div id="fotoUser"></div>
+            <br>
+            <div style="margin-left: 5px;" id="dadosUser"></div>
+            <br><br>
+        </div>   
+    </div>
+    <br>
+    <h3>Alarmes monitorados</h3><br>
     <!-- Selecionar a data -->
 
         <!-- Para centralizar na horizontal -->
         <!--APAGAR -> class="col-6 mx-auto  class="col-lg-6 col-md-6 mx-auto"-->
-
-    <div class="col-lg-12" style="text-align: center" id="btRelatorios">
-        <button class="btn btn-info" onclick="buscarAlertas()">Gerar relatório</button>
+    <div  class = "container">
+        <div class="row justify-content-center">
+            <div class="col justify-content-center">
+                <div style="text-align:center" id="msgError"></div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-8 justify-content-center">
+                <div style="text-align:center" id="alertas"></div>
+            </div>
+        </div>
     </div>
-    <div class="text-center" id="msgError"></div>
-    <div id="alertas"></div>
-
-
-
-
 </body>
 
 </html>

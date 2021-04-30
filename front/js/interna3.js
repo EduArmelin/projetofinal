@@ -1,11 +1,11 @@
-function validaLogin() {
+/*function validaLogin() {
     let userTxt=localStorage.getItem("userLoged");
     if (!userTxt) {
         //forçando ir para a pagina principal se não estiver logado.
         window.location = "index.html";
     }
     let user = JSON.parse(userTxt);
-}
+}*/
 function buscarAlertas() {
     //event.preventDefault();
     fetch("http://localhost:8080/alarm/all")
@@ -14,14 +14,15 @@ function buscarAlertas() {
 function tratarRetorno(retorno){
     console.log("retorno")
     if (retorno.status == 200) {
-        retorno.json().then(res => exibirEventos(res));
+        retorno.json().then(res => exibirAlarmes(res));
     }else {
         document.getElementById("msgError").innerHTML="Nenhum evento foi encontrado.";
     }
 }
-function exibirEventos(lista){
+function exibirAlarmes(lista){
     console.log(lista)
-    let tabela = `<table class="table" table-sm><tr><th>Alerta</th><th>Descrição</th></tr>`;
+    /* class="table" table-sm */
+    let tabela = `<table id= "tableevento" class="table table-sm"><tr><th>Alerta</th><th>Descrição</th></tr>`;
     for (i=0;i< lista.length;i++){
         tabela += `<tr><td>${lista[i].nome}</td><td>${lista[i].descricao}</td></tr>`
     }    

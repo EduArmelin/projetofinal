@@ -21,29 +21,28 @@
 </head>
 
 <body onload="validaLogin()">
-    <h2 class="h2"> Sistema Justificativas - Visão Colaborador </h2>
+    <h2> Sistema Justificativas - Visão Colaborador </h2>
 
     <div class="col-lg-12" style="text-align: right;">
-        <button class="btn btn-info" onclick="logout()">Sair</button>
+        <button class="btn btn-info" style="background-color: rgb(0, 0, 156);" onclick="logout()">Sair</button>
     </div>
     <br><br>
-
-
-    <div id="fotoUser" style="text-align: center;"></div>
-    <br>
-
-    <div id="dadosUser" style="text-align: center;"></div>
-    <br><br>
-
-
-    <h3 class="h3"> Selecione seu Relatório</h3><br><br>
+    <div  class = "container">
+        <div class="row justify-content-center">
+            <div id="fotoUser"></div>
+            <br>
+            <div style="margin-left: 5px;" id="dadosUser"></div>
+            <br><br>
+        </div>   
+    </div>
+    <h3> <br>Selecione o Relatório</h3><br>
 
     <div class="col-lg-12" style="text-align: center;">
-        <a href="/html/interna2.html" class="btn btn-info" role="button">Relatório de Eventos por Período</a>
+        <a href="/html/interna2.html" class="btn btn-info" style="background-color: rgb(0, 0, 156);" role="button">Relatório de Eventos por Período</a>
     </div>
     <br>
     <div class="col-lg-12" style="text-align: center;">
-        <a href="/html/interna3.html" class="btn btn-info" role="button">Relatório de Alarmes</a>
+        <a href="/html/interna3.html" class="btn btn-info" style="background-color: rgb(0, 0, 156);" role="button">Relatório de Alarmes</a>
     </div>
 </body>
 

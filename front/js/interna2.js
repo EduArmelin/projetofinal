@@ -1,13 +1,15 @@
-function validaLogin() {
+/*function validaLogin() {
     let userTxt=localStorage.getItem("userLoged");
     if (!userTxt) {
         //forçando ir para a pagina principal se não estiver logado.
         window.location = "index.html";
     }
     let user = JSON.parse(userTxt);
-}
+}*/
 function buscarRelatorios() {
     //event.preventDefault();
+    document.getElementById("relatorios").innerHTML="";
+    document.getElementById("msgError").innerHTML="";
     let txtDataI = document.getElementById("txtDataI").value
     let txtDataF = document.getElementById("txtDataF").value
 
@@ -26,14 +28,21 @@ function buscarRelatorios() {
 function tratarRetorno(retorno){
     console.log("retorno")
     if (retorno.status == 200) {
+        //document.getElementById("msgError").innerHTML="";
         retorno.json().then(res => exibirEventos(res));
     }else {
+        //document.getElementById("relatorios").innerHTML="";
         document.getElementById("msgError").innerHTML="Nenhum evento foi encontrado.";
     }
 }
 function exibirEventos(lista){
     console.log(lista)
-    let tabela = `<table class="table" table-sm><tr><th>Data</th><th>Equipamento</th><th>Evento</th></tr>`;
+    if (lista.length ==0 ) {
+        document.getElementById("msgError").innerHTML="Nenhum evento foi encontrado.";
+        return
+    }
+    /*<table id= "tableevento" class="table table-sm" > */
+    let tabela = `<table id= "tableevento" class="table table-sm"><tr><th>Data</th><th>Equipamento</th><th>Evento</th></tr>`;
     for (i=0;i< lista.length;i++){
         let dataAtual = new Date(lista[i].dataEvt).toLocaleDateString("pt-BR", { timeZone: 'UTC' })
         tabela += `<tr><td>${dataAtual}</td><td>${lista[i].equipamento.hostname}</td><td>${lista[i].alarme.descricao}</td></tr>`
