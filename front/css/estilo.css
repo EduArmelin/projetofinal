@@ -1,0 +1,47 @@
+body, html {
+    background-color: rgb(217, 219, 230);
+    height: 100%;
+    
+  }
+
+  h1 {
+    font-size: 26px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    color:rgb(3, 1, 1);
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    color:rgb(0, 0, 0);
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    color:rgb(0, 0, 0);
+    text-align: center;
+
+  }
+  .form-control{
+    margin-bottom: 15px;
+  }
+  
+  #msgError{
+    color: red;
+  }
+  
+  #fotoUser img {
+    height: 80px;
+    width: 80px;
+    margin: auto;
+  }
+
+  #dadosUser text {
+    text-align: center;
+  }
