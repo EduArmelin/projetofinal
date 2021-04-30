@@ -35,7 +35,8 @@ function exibirEventos(lista){
     console.log(lista)
     let tabela = `<table class="table" table-sm><tr><th>Data</th><th>Equipamento</th><th>Evento</th></tr>`;
     for (i=0;i< lista.length;i++){
-        tabela += `<tr><td>${lista[i].dataEvt}</td><td>${lista[i].equipamento.hostname}</td><td>${lista[i].alarme.descricao}</td></tr>`
+        let dataAtual = new Date(lista[i].dataEvt).toLocaleDateString("pt-BR", { timeZone: 'UTC' })
+        tabela += `<tr><td>${dataAtual}</td><td>${lista[i].equipamento.hostname}</td><td>${lista[i].alarme.descricao}</td></tr>`
     }    
     tabela += `</table>`;
     document.getElementById("relatorios").innerHTML=tabela;

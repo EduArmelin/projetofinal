@@ -43,7 +43,7 @@ public class EventController {
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate dataInicial = LocalDate.parse(objEvent.get("dataI").asText(),fmt);
         LocalDate dataFim = LocalDate.parse(objEvent.get("dataF").asText(),fmt);
-        List<EventModel> listData = repo.findByDataEvtBetween(dataInicial, dataFim);
+        List<EventModel> listData = repo.findByDataEvtBetweenOrderByDataEvt(dataInicial, dataFim);
         if (listData != null) {
             return ResponseEntity.ok(listData);
         }

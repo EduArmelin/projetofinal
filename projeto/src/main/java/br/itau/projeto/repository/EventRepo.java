@@ -9,5 +9,5 @@ import br.itau.projeto.model.EventModel;
 
 public interface EventRepo extends CrudRepository<EventModel, Integer> {
     //findByStartDateBetween
-    public List<EventModel> findByDataEvtBetween (LocalDate dataInicio, LocalDate dataFim);
+    public List<EventModel> findByDataEvtBetweenOrderByDataEvt (LocalDate dataInicio, LocalDate dataFim);
 }
