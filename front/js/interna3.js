@@ -6,21 +6,9 @@ function validaLogin() {
     }
     let user = JSON.parse(userTxt);
 }
-function buscarRelatorios() {
+function buscarAlertas() {
     //event.preventDefault();
-    let txtDataI = document.getElementById("txtDataI").value
-    let txtDataF = document.getElementById("txtDataF").value
-
-    let eventos = {
-        dataI: txtDataI,
-        dataF: txtDataF
-    }
-    let msg = {
-        method: 'POST',
-        body: JSON.stringify(eventos),
-        headers: {'Content-type':'application/json'}
-    }
-    fetch("http://localhost:8080/event/busca", msg)
+    fetch("http://localhost:8080/alarm/all")
     .then(resp => tratarRetorno(resp))
 }
 function tratarRetorno(retorno){
@@ -33,12 +21,12 @@ function tratarRetorno(retorno){
 }
 function exibirEventos(lista){
     console.log(lista)
-    let tabela = `<table class="table" table-sm><tr><th>Data</th><th>Equipamento</th><th>Evento</th></tr>`;
+    let tabela = `<table class="table" table-sm><tr><th>Alerta</th><th>Descrição</th></tr>`;
     for (i=0;i< lista.length;i++){
-        tabela += `<tr><td>${lista[i].dataEvt}</td><td>${lista[i].equipamento.hostname}</td><td>${lista[i].alarme.descricao}</td></tr>`
+        tabela += `<tr><td>${lista[i].nome}</td><td>${lista[i].descricao}</td></tr>`
     }    
     tabela += `</table>`;
-    document.getElementById("relatorios").innerHTML=tabela;
+    document.getElementById("alertas").innerHTML=tabela;
 }
 function logout() {
     localStorage.removeItem("userLoged");
